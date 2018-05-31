@@ -9,8 +9,8 @@ var hcnt;
 var mincnt;
 var seccnt;
 
-t1 = Number(process.argv[2]) >= 1 ? Number(process.argv[2]) : 1;
-t2 = Number(process.argv[3]) <= 10000 ? Number(process.argv[3]) : 10000;
+t1 = Number(process.argv[2]);
+t2 = Number(process.argv[3]);
 
 S = t1 + t2;
 

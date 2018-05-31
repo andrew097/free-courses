@@ -3,7 +3,7 @@
 function ArrayRotateRight(arr)
 {
     var newArr;
-    //newArr = arr.unshift(arr.pop());
+
     newArr = arr;
     newArr.unshift(newArr.pop());
     return newArr.join("");
@@ -12,7 +12,7 @@ function ArrayRotateRight(arr)
 function ArrayRotateLeft(arr)
 {
     var newArr;
-    //newArr = arr.push(arr.shift());
+
     newArr = arr;
     newArr.push(newArr.shift());
     return newArr.join("");

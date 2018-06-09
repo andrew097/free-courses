@@ -27,10 +27,11 @@ var daycnt;
 var hcnt;
 var mincnt;
 var seccnt;
-var datstr;
+var daystr;
 var hstr;
 var minstr;
 var secstr;
+var res;
 
 t1 = Number(process.argv[2]);
 t2 = Number(process.argv[3]);
@@ -43,13 +44,28 @@ hcnt = Math.floor(S / 3600);
 daycnt = Math.floor(hcnt / 24);
 hcnt = hcnt % 24;
 
+daystr = wordDecline(daycnt, ["день", "дня", "дней"])
 hstr = wordDecline(hcnt, ["час", "часа", "часов"]);
 minstr = wordDecline(mincnt, ["минута", "минуты", "минут"]);
 secstr = wordDecline(seccnt, ["секунда", "секунды", "секунд"]);
 
+res = "";
+if (daycnt > 0) {
+    res =' ' +  daycnt.toString() + ' ' + daystr;
+}
+
+if (hcnt > 0) {
+    res += ' ' + hcnt.toString() + ' ' + hstr;
+}
+
+if (mincnt > 0) {
+    res += ' ' + mincnt.toString() + ' ' + minstr;
+}
+
 if (seccnt > 0) {
-    process.stdout.write(hcnt.toString() + ' ' + hstr + ' ' + mincnt.toString() + ' ' + minstr + ' ' + seccnt.toString() + ' ' + secstr);
+    res += ' ' + seccnt.toString() + ' ' + secstr;
 }
-else {
-    process.stdout.write(hcnt.toString() + ' ' +  hstr + ' ' + mincnt.toString() + ' ' + minstr);
-}
+
+res = res.trim();
+process.stdout.write(res);
+

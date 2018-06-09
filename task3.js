@@ -23,9 +23,11 @@ var t2;
 var S;
 
 
+var daycnt;
 var hcnt;
 var mincnt;
 var seccnt;
+var datstr;
 var hstr;
 var minstr;
 var secstr;
@@ -38,6 +40,8 @@ S = t1 + t2;
 seccnt = S % 60;
 mincnt = Math.floor(S / 60) % 60;
 hcnt = Math.floor(S / 3600);
+daycnt = Math.floor(hcnt / 24);
+hcnt = hcnt % 24;
 
 hstr = wordDecline(hcnt, ["час", "часа", "часов"]);
 minstr = wordDecline(mincnt, ["минута", "минуты", "минут"]);
